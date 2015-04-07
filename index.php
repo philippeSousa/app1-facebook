@@ -1,5 +1,5 @@
 <?php session_start();
-require_once 'vendor\facebook\php-sdk-v4\autoload.php';
+require_once 'vendor/autoload.php';
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
