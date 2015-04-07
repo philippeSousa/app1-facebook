@@ -44,7 +44,7 @@ FacebookSession::setDefaultApplication(id, mdp);
   data-show-faces="true">
 </div>
 <?php  
-$redirectUrl = "http://localhost/index.php";
+$redirectUrl = "https://appesgifacebook.herokuapp.com/";
 $helper = new FacebookRedirectLoginHelper($redirectUrl);
 // Checking Session
 if(isset($_session) && isset($_session['fb_token']))
