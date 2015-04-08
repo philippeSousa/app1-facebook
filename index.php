@@ -12,8 +12,8 @@
     use Facebook\FacebookRedirectLoginHelper;
     use Facebook\FacebookRequest;
     
-    const APPID = "1374336012897003";
-    const APPSECRET = "4f30d40e554776ebc1aa328683d9178e";
+    const APPID = "1468256266797643";
+    const APPSECRET = "5598726dd2d32c30ca7e11b7eeb68016";
 
     FacebookSession::setDefaultApplication(APPID, APPSECRET);
 
