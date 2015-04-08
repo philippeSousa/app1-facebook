@@ -37,7 +37,6 @@ FacebookSession::setDefaultApplication(id, mdp);
 </head>
 
 <body>
-<a href="">ddddddddddddddddddddddddddddddddddddd</a>
 
 <div
   class="fb-like"
@@ -65,9 +64,9 @@ if($session){
 $user = (new FacebookRequest($session,'GET','/me'))->execute()->getGraphObject(GraphUser::className());
 
 echo "bonjour ". $user->getName();
+
 }else{
     echo '<a href="' . $helper->getLoginUrl() . '">Login</a>';
-
 }
 
 
