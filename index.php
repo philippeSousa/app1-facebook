@@ -17,7 +17,8 @@
 
     FacebookSession::setDefaultApplication(APPID, APPSECRET);
 
-    $helper = new FacebookRedirectLoginHelper('https://appesgifacebook.herokuapp.com/');
+    $redirectLoginUrl = "https://appesgifacebook.herokuapp.com/";
+    $helper = new FacebookRedirectLoginHelper($redirectLoginUrl);
 
     if( isset($_SESSION) &&  isset($_SESSION['fb_token']))
     {
