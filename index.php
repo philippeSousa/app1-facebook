@@ -20,7 +20,7 @@
 
     FacebookSession::setDefaultApplication(APPID, APPSECRET);
 
-    $helper = new FacebookRedirectLoginHelper('https://projetesgi1.herokuapp.com/');
+    $helper = new FacebookRedirectLoginHelper('https://appesgifacebook.herokuapp.com/');
 
     if( isset($_SESSION) &&  isset($_SESSION['fb_token']))
     {
@@ -90,7 +90,7 @@
             echo "<pre>";
             print_r($user);
             echo "</pre>";
-        
+          var_dump($session);
 
           }else{
             $loginUrl = $helper->getLoginUrl();
