@@ -1,10 +1,15 @@
-<?php session_start();
+<?php 
+ error_reporting(E_ALL);
+ini_set("display_errors", 1);
+session_start();
+
 require_once 'vendor/autoload.php';
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
 use Facebook\FacebookRequestException;
 use Facebook\GraphUser;
+
 
 const id = "1468256266797643";
 const mdp = "5598726dd2d32c30ca7e11b7eeb68016";
@@ -55,13 +60,18 @@ if(isset($_session) && isset($_session['fb_token']))
 else
 {
   $session = $helper->getSessionFromRedirect();
+ 
   // Login URL if session not found
   $loginURL = $helper->getLoginUrl(['email,user_brithday']);
 }
 
 if($session){
+$_session['fb_token']= (string) $session->getAccesToken();
+//$user = (new FacebookRequest($session,'GET','/me'))->execute()->getGraphObject(GraphUser::className());
 
-$user = (new FacebookRequest($session,'GET','/me'))->execute()->getGraphObject(GraphUser::className());
+        $request_user = new FacebookRequest( $session,"GET","/me");
+        $request_user_executed = $request_user->execute();
+        $user = $request_user_executed->getGraphObject(GraphUser::className());
 
 echo "bonjour ". $user->getName();
 
